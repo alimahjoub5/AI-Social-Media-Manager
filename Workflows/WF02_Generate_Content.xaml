@@ -1,0 +1,438 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="WF02_Generate_Content" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="WF02_Generate_Content_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uwah="clr-namespace:UiPath.Web.Activities.Http;assembly=UiPath.Web.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Sdk.Activities</x:String>
+      <x:String>UiPath.Sdk.Activities.DependencyInjection</x:String>
+      <x:String>UiPath.Sdk.Activities.DependencyInjection.Contracts</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>UiPath.Web.Activities.Http</x:String>
+      <x:String>UiPath.Web.Activities.Http.Models</x:String>
+      <x:String>UiPath.Web.Activities.JSON.Models</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.PowerShell.Commands.Diagnostics</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.FileVersionInfo</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.DiagnosticSource</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.EventLog</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.PerformanceCounter</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TextWriterTraceListener</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TraceSource</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="WF02_Generate_Content" sap:VirtualizedContainerService.HintSize="946,6358.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap:VirtualizedContainerService.HintSize="520,6335.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Name="dtTrends" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtContent" />
+        <Variable x:TypeArguments="x:String" Name="title" />
+        <Variable x:TypeArguments="x:String" Name="description" />
+        <Variable x:TypeArguments="x:String" Name="subreddit" />
+        <Variable x:TypeArguments="x:String" Name="upvotes" />
+        <Variable x:TypeArguments="x:String" Name="comments" />
+        <Variable x:TypeArguments="x:String" Name="prompt" />
+        <Variable x:TypeArguments="x:String" Name="requestBody" />
+        <Variable x:TypeArguments="x:Object" Name="apiResponse" />
+        <Variable x:TypeArguments="x:String" Name="responseJson" />
+        <Variable x:TypeArguments="njl:JObject" Name="responseObject" />
+        <Variable x:TypeArguments="x:String" Name="aiResponse" />
+        <Variable x:TypeArguments="x:String" Name="aiJsonString" />
+        <Variable x:TypeArguments="njl:JObject" Name="aiJson" />
+        <Variable x:TypeArguments="x:String" Name="instagram" />
+        <Variable x:TypeArguments="x:String" Name="facebook" />
+        <Variable x:TypeArguments="x:String" Name="linkedin" />
+        <Variable x:TypeArguments="x:String" Name="twitter" />
+        <Variable x:TypeArguments="x:String" Name="tiktok" />
+        <Variable x:TypeArguments="x:String" Name="hook" />
+        <Variable x:TypeArguments="x:String" Name="cta" />
+        <Variable x:TypeArguments="x:String" Name="hashtags" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope (ExcelProcessScope)" sap:VirtualizedContainerService.HintSize="486.4,577.6" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+        <ueab:ExcelProcessScopeX.Body>
+          <ActivityAction x:TypeArguments="ui:IExcelProcess">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484.8,499.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="451.2,439.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="Data\Trends.xlsx">
+                <ueab:ExcelApplicationCard.Body>
+                  <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,220" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="416,160" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[Excel.Sheet(&quot;Sheet1&quot;)]" SaveTo="[dtTrends]" />
+                    </Sequence>
+                  </ActivityAction>
+                </ueab:ExcelApplicationCard.Body>
+              </ueab:ExcelApplicationCard>
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelProcessScopeX.Body>
+      </ueab:ExcelProcessScopeX>
+      <ui:InvokeCode ContinueOnError="{x:Null}" Code="io_dtContent = New DataTable()&#xA;io_dtContent.Columns.Add(&quot;Title&quot;)&#xA;io_dtContent.Columns.Add(&quot;Instagram&quot;)&#xA;io_dtContent.Columns.Add(&quot;Facebook&quot;)&#xA;io_dtContent.Columns.Add(&quot;LinkedIn&quot;)&#xA;io_dtContent.Columns.Add(&quot;Twitter&quot;)&#xA;io_dtContent.Columns.Add(&quot;TikTok&quot;)&#xA;io_dtContent.Columns.Add(&quot;Hook&quot;)&#xA;io_dtContent.Columns.Add(&quot;CTA&quot;)&#xA;io_dtContent.Columns.Add(&quot;Hashtags&quot;)&#xA;io_dtContent.Columns.Add(&quot;Status&quot;)" DisplayName="Initialize dtContent" sap:VirtualizedContainerService.HintSize="486.4,400.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+        <ui:InvokeCode.Arguments>
+          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtContent">[dtContent]</InOutArgument>
+        </ui:InvokeCode.Arguments>
+      </ui:InvokeCode>
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtTrends]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="486.4,4652.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+        <ui:ForEachRow.Body>
+          <ActivityAction x:TypeArguments="sd:DataRow">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="484.8,4471.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_1">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[title]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[CurrentRow("Title").ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[description]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[CurrentRow("Description").ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[subreddit]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[CurrentRow("Subreddit").ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_4">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[upvotes]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[CurrentRow("Upvotes").ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_5">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[comments]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[CurrentRow("Comments").ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <TryCatch DisplayName="Try Catch - Generate And Parse" sap:VirtualizedContainerService.HintSize="451.2,3539.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                <TryCatch.Try>
+                  <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="449.6,3144" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_6">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[prompt]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">["You are a professional Social Media Manager." + Environment.NewLine + Environment.NewLine + "Based on the following Reddit trend:" + Environment.NewLine + "Title: " + title + Environment.NewLine + "Description: " + description + Environment.NewLine + "Subreddit: " + subreddit + Environment.NewLine + "Popularity: " + upvotes + " upvotes, " + comments + " comments" + Environment.NewLine + Environment.NewLine + "Return ONLY valid JSON in this exact structure (no markdown, no extra text):" + Environment.NewLine + "{" + Environment.NewLine + " ""instagram"":""...""," + Environment.NewLine + " ""facebook"":""...""," + Environment.NewLine + " ""linkedin"":""...""," + Environment.NewLine + " ""twitter"":""...""," + Environment.NewLine + " ""tiktok"":""...""," + Environment.NewLine + " ""hook"":""...""," + Environment.NewLine + " ""cta"":""...""," + Environment.NewLine + " ""hashtags"":""...""" + Environment.NewLine + "}"]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_7">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[requestBody]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[String.Format("{{""model"":""sonar"",""messages"":[{{""role"":""user"",""content"":""{0}""}}]}}", If(prompt, String.Empty).Replace(ChrW(92), ChrW(92) &amp; ChrW(92)).Replace(ChrW(34), ChrW(92) &amp; ChrW(34)).Replace(vbCrLf, "\n").Replace(vbLf, "\n"))]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="False" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.Dictionary(Of System.String, System.String) From {{&quot;Authorization&quot;, &quot;Bearer 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&quot;}, {&quot;Content-Type&quot;, &quot;application/json&quot;}}]" sap:VirtualizedContainerService.HintSize="416,432.8" sap2010:WorkflowViewState.IdRef="NetHttpRequest_2" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="[&quot;https://api.perplexity.ai/chat/completions&quot;]" Result="[apiResponse]" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayload="[requestBody]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+                      <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                        <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                          <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                        </InArgument>
+                      </uwah:NetHttpRequest.TimeoutInMiliseconds>
+                    </uwah:NetHttpRequest>
+                    <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_8">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[responseJson]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[If(apiResponse Is Nothing, String.Empty, If(TypeOf apiResponse Is String, apiResponse.ToString, If(apiResponse.GetType.GetProperty("TextContent") IsNot Nothing AndAlso apiResponse.GetType.GetProperty("TextContent").GetValue(apiResponse, Nothing) IsNot Nothing, apiResponse.GetType.GetProperty("TextContent").GetValue(apiResponse, Nothing).ToString, apiResponse.ToString)))]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" Settings="{x:Null}" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="416,173.6" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[responseObject]" JsonString="[If(Not String.IsNullOrWhiteSpace(responseJson) AndAlso (responseJson.TrimStart.StartsWith(&quot;{&quot;) OrElse responseJson.TrimStart.StartsWith(&quot;[&quot;)), responseJson, &quot;{}&quot;)]" />
+                    <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_9">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[aiResponse]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[If(responseObject Is Nothing, "No result returned. Raw response: " + If(String.IsNullOrWhiteSpace(responseJson), "(empty)", responseJson), If(responseObject.SelectToken("choices[0].message.content") IsNot Nothing, responseObject.SelectToken("choices[0].message.content").ToString, If(responseObject.SelectToken("error.message") IsNot Nothing, "API error: " + responseObject.SelectToken("error.message").ToString, "No result returned. Raw response: " + If(String.IsNullOrWhiteSpace(responseJson), "(empty)", responseJson))))]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim raw As String = If(in_aiResponse, String.Empty).Trim()&#xA;If String.IsNullOrWhiteSpace(raw) Then&#xA;    out_aiJsonString = &quot;{}&quot;&#xA;    Exit Sub&#xA;End If&#xA;&#xA;If raw.StartsWith(&quot;```&quot;) Then&#xA;    raw = raw.Replace(&quot;```json&quot;, String.Empty).Replace(&quot;```&quot;, String.Empty).Trim()&#xA;End If&#xA;&#xA;Dim startIdx As Integer = raw.IndexOf(&quot;{&quot;c)&#xA;Dim endIdx As Integer = raw.LastIndexOf(&quot;}&quot;c)&#xA;If startIdx &gt;= 0 AndAlso endIdx &gt; startIdx Then&#xA;    raw = raw.Substring(startIdx, endIdx - startIdx + 1)&#xA;End If&#xA;&#xA;raw = System.Text.RegularExpressions.Regex.Replace(raw, &quot;&quot;&quot;([A-Za-z0-9_]+)&quot;&quot;\s+&quot;&quot;&quot;, &quot;&quot;&quot;$1&quot;&quot;:&quot;&quot;&quot;)&#xA;raw = System.Text.RegularExpressions.Regex.Replace(raw, &quot;,\s*([}\]])&quot;, &quot;$1&quot;)&#xA;&#xA;Try&#xA;    Dim parsedObj As Newtonsoft.Json.Linq.JObject = Newtonsoft.Json.Linq.JObject.Parse(raw)&#xA;    out_aiJsonString = raw&#xA;Catch&#xA;    out_aiJsonString = &quot;{}&quot;&#xA;End Try" DisplayName="Sanitize AI JSON" sap:VirtualizedContainerService.HintSize="416,164" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+                      <ui:InvokeCode.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_aiResponse">[aiResponse]</InArgument>
+                        <OutArgument x:TypeArguments="x:String" x:Key="out_aiJsonString">[aiJsonString]</OutArgument>
+                      </ui:InvokeCode.Arguments>
+                    </ui:InvokeCode>
+                    <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" Settings="{x:Null}" DisplayName="Deserialize AI JSON" sap:VirtualizedContainerService.HintSize="416,173.6" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_2" JsonObject="[aiJson]" JsonString="[aiJsonString]" />
+                    <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_10">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[instagram]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[If(aiJson IsNot Nothing AndAlso aiJson.SelectToken("instagram") IsNot Nothing, aiJson.SelectToken("instagram").ToString, String.Empty)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_11">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[facebook]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[If(aiJson IsNot Nothing AndAlso aiJson.SelectToken("facebook") IsNot Nothing, aiJson.SelectToken("facebook").ToString, String.Empty)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_12">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[linkedin]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[If(aiJson IsNot Nothing AndAlso aiJson.SelectToken("linkedin") IsNot Nothing, aiJson.SelectToken("linkedin").ToString, String.Empty)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_13">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[twitter]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[If(aiJson IsNot Nothing AndAlso aiJson.SelectToken("twitter") IsNot Nothing, aiJson.SelectToken("twitter").ToString, String.Empty)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_14">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[tiktok]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[If(aiJson IsNot Nothing AndAlso aiJson.SelectToken("tiktok") IsNot Nothing, aiJson.SelectToken("tiktok").ToString, String.Empty)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_15">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[hook]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[If(aiJson IsNot Nothing AndAlso aiJson.SelectToken("hook") IsNot Nothing, aiJson.SelectToken("hook").ToString, String.Empty)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_16">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[cta]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[If(aiJson IsNot Nothing AndAlso aiJson.SelectToken("cta") IsNot Nothing, aiJson.SelectToken("cta").ToString, String.Empty)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_17">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[hashtags]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[If(aiJson IsNot Nothing AndAlso aiJson.SelectToken("hashtags") IsNot Nothing, aiJson.SelectToken("hashtags").ToString, String.Empty)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[New Object() {title, instagram, facebook, linkedin, twitter, tiktok, hook, cta, hashtags, &quot;Pending Approval&quot;}]" DataTable="[dtContent]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="416,211.2" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                  </Sequence>
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="422.4,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                    <ActivityAction x:TypeArguments="s:Exception">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Catch" sap:VirtualizedContainerService.HintSize="449.6,173.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <WriteLine DisplayName="Write Log" sap:VirtualizedContainerService.HintSize="416,113.6" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Trend failed: &quot; + title + &quot; | Error: &quot; + exception.Message]" />
+                      </Sequence>
+                    </ActivityAction>
+                  </Catch>
+                </TryCatch.Catches>
+              </TryCatch>
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEachRow.Body>
+      </ui:ForEachRow>
+      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope (Write Content)" sap:VirtualizedContainerService.HintSize="486.4,620.8" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
+        <ueab:ExcelProcessScopeX.Body>
+          <ActivityAction x:TypeArguments="ui:IExcelProcess">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag1" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484.8,551.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="451.2,491.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" WorkbookPath="Data\dtContent.xlsx">
+                <ueab:ExcelApplicationCard.Body>
+                  <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel1" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,272" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ueab:WriteRangeX Destination="[Excel1.Sheet(&quot;Sheet1&quot;).Range(&quot;A1&quot;)]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="416,212" sap2010:WorkflowViewState.IdRef="WriteRangeX_1" IgnoreEmptySource="False" Source="[dtContent]" />
+                    </Sequence>
+                  </ActivityAction>
+                </ueab:ExcelApplicationCard.Body>
+              </ueab:ExcelApplicationCard>
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelProcessScopeX.Body>
+      </ueab:ExcelProcessScopeX>
+    </Sequence>
+  </Sequence>
+</Activity>

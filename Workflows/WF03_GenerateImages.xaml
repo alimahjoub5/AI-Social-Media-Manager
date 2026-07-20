@@ -1,0 +1,443 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="WF03_GenerateImages" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="WF03_GenerateImages_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uwah="clr-namespace:UiPath.Web.Activities.Http;assembly=UiPath.Web.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Web</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>UiPath.Web.Activities.Http.Models</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>UiPath.Web.Activities.Http</x:String>
+      <x:String>UiPath.Web.Activities.JSON.Models</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>UiPath.Web</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="WF03_GenerateImages" sap:VirtualizedContainerService.HintSize="946,6469.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap:VirtualizedContainerService.HintSize="520,6446.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Name="dtContent" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtConfig" />
+        <Variable x:TypeArguments="x:String" Name="unsplashAccessKey" />
+        <Variable x:TypeArguments="x:String" Name="imagesFolderPath" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Start" sap:VirtualizedContainerService.HintSize="486.4,182.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;WF03_GenerateImages execution started.&quot;]" />
+      <Assign DisplayName="Set Images Folder Path" sap:VirtualizedContainerService.HintSize="486.4,121.6" sap2010:WorkflowViewState.IdRef="Assign_14">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[imagesFolderPath]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(Environment.CurrentDirectory, "Images")]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="486.4,577.6" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+        <ueab:ExcelProcessScopeX.Body>
+          <ActivityAction x:TypeArguments="ui:IExcelProcess">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,491" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="416,380" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="Data\dtContent.xlsx">
+                <ueab:ExcelApplicationCard.Body>
+                  <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,199" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="ReadRangeX_2" Range="[Excel.Sheet(&quot;sheet1&quot;)]" SaveTo="[dtContent]" />
+                    </Sequence>
+                  </ActivityAction>
+                </ueab:ExcelApplicationCard.Body>
+              </ueab:ExcelApplicationCard>
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelProcessScopeX.Body>
+      </ueab:ExcelProcessScopeX>
+      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope (Read Config)" sap:VirtualizedContainerService.HintSize="486.4,577.6" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_3">
+        <ueab:ExcelProcessScopeX.Body>
+          <ActivityAction x:TypeArguments="ui:IExcelProcess">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag2" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484.8,499.2" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="451.2,439.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_3" ResizeWindow="None" WorkbookPath="Config\Config.xlsx">
+                <ueab:ExcelApplicationCard.Body>
+                  <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel2" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,220" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ueab:ReadRangeX DisplayName="Read Config" sap:VirtualizedContainerService.HintSize="416,160" sap2010:WorkflowViewState.IdRef="ReadRangeX_3" Range="[Excel2.Sheet(&quot;Sheet1&quot;)]" SaveTo="[dtConfig]" />
+                    </Sequence>
+                  </ActivityAction>
+                </ueab:ExcelApplicationCard.Body>
+              </ueab:ExcelApplicationCard>
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelProcessScopeX.Body>
+      </ueab:ExcelProcessScopeX>
+      <Assign sap:VirtualizedContainerService.HintSize="486.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_13">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[unsplashAccessKey]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[If(dtConfig IsNot Nothing AndAlso dtConfig.Select("Key='UnsplashAccessKey'").Length > 0, dtConfig.Select("Key='UnsplashAccessKey'")(0)("Value").ToString.Trim, String.Empty)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:LogMessage DisplayName="Log Config Key" sap:VirtualizedContainerService.HintSize="451.2,182.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Unsplash Access Key from config: &quot; + unsplashAccessKey]" />
+      <ui:InvokeCode ContinueOnError="{x:Null}" Code="If Not String.IsNullOrWhiteSpace(in_unsplashAccessKey) Then Environment.SetEnvironmentVariable(&quot;UNSPLASH_ACCESS_KEY&quot;, in_unsplashAccessKey)" DisplayName="Set UNSPLASH_ACCESS_KEY from Config" sap:VirtualizedContainerService.HintSize="486.4,400.8" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
+        <ui:InvokeCode.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_unsplashAccessKey">[unsplashAccessKey]</InArgument>
+        </ui:InvokeCode.Arguments>
+      </ui:InvokeCode>
+      <ui:InvokeCode ContinueOnError="{x:Null}" Code="If io_dtContent Is Nothing Then io_dtContent = New DataTable()&#xA;If Not io_dtContent.Columns.Contains(&quot;ImagePath&quot;) Then io_dtContent.Columns.Add(&quot;ImagePath&quot;, GetType(String))&#xA;If Not io_dtContent.Columns.Contains(&quot;Status&quot;) Then io_dtContent.Columns.Add(&quot;Status&quot;, GetType(String))" DisplayName="Ensure ImagePath/Status Columns" sap:VirtualizedContainerService.HintSize="486.4,400.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+        <ui:InvokeCode.Arguments>
+          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtContent">[dtContent]</InOutArgument>
+        </ui:InvokeCode.Arguments>
+      </ui:InvokeCode>
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtContent]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="486.4,3611.2" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+        <ui:ForEachRow.Body>
+          <ActivityAction x:TypeArguments="sd:DataRow">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="484.8,3429.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="title" />
+                <Variable x:TypeArguments="x:String" Name="caption" />
+                <Variable x:TypeArguments="x:String" Name="hook" />
+                <Variable x:TypeArguments="x:String" Name="Prompt" />
+                <Variable x:TypeArguments="x:String" Name="ResponseContent" />
+                <Variable x:TypeArguments="x:Object" Name="apiResponse" />
+                <Variable x:TypeArguments="njl:JObject" Name="jsonResponse" />
+                <Variable x:TypeArguments="x:String" Name="imageUrl" />
+                <Variable x:TypeArguments="x:Object" Name="downloadResponse" />
+                <Variable x:TypeArguments="x:Object" Name="imageBytes" />
+                <Variable x:TypeArguments="x:String" Name="imageFileName" />
+                <Variable x:TypeArguments="x:String" Name="imagePath" />
+                <Variable x:TypeArguments="x:String" Name="imageStatus" />
+                <Variable x:TypeArguments="x:String" Name="tempImagePath" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_1">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[title]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[If(row Is Nothing OrElse Not row.Table.Columns.Contains("Title") OrElse row("Title") Is DBNull.Value, String.Empty, row("Title").ToString.Trim)]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[caption]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[If(row Is Nothing OrElse Not row.Table.Columns.Contains("Instagram") OrElse row("Instagram") Is DBNull.Value, String.Empty, row("Instagram").ToString.Trim)]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[hook]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[If(row Is Nothing OrElse Not row.Table.Columns.Contains("Hook") OrElse row("Hook") Is DBNull.Value, String.Empty, row("Hook").ToString.Trim)]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_4">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[Prompt]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String" xml:space="preserve">["Create a modern social media illustration about " +
+title +
+". Caption: " +
+caption +
+". Flat illustration, blue colors, no text, square format."]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" TextPayload="{x:Null}" AuthenticationType="None" ContinueOnError="False" DisableSslVerification="False" DisplayName="HTTP Request - Search Images" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.Dictionary(Of System.String, System.String) From {{&quot;Authorization&quot;, &quot;Client-ID &quot; + If(Environment.GetEnvironmentVariable(&quot;UNSPLASH_ACCESS_KEY&quot;), String.Empty)}, {&quot;Accept-Version&quot;, &quot;v1&quot;}}]" sap:VirtualizedContainerService.HintSize="451.2,276.8" sap2010:WorkflowViewState.IdRef="NetHttpRequest_2" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="GET" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="None" RequestUrl="[&quot;https://api.unsplash.com/search/photos?query=&quot; + Uri.EscapeDataString(If(Prompt, String.Empty)) + &quot;&amp;per_page=1&amp;orientation=squarish&amp;content_filter=high&quot;]" Result="[apiResponse]" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+                <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                  <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                    <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                  </InArgument>
+                </uwah:NetHttpRequest.TimeoutInMiliseconds>
+              </uwah:NetHttpRequest>
+              <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_6">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[ResponseContent]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[If(apiResponse Is Nothing, String.Empty, If(TypeOf apiResponse Is String, apiResponse.ToString, If(apiResponse.GetType.GetProperty("TextContent") IsNot Nothing AndAlso apiResponse.GetType.GetProperty("TextContent").GetValue(apiResponse, Nothing) IsNot Nothing, apiResponse.GetType.GetProperty("TextContent").GetValue(apiResponse, Nothing).ToString, apiResponse.ToString)))]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" Settings="{x:Null}" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="451.2,173.6" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[jsonResponse]" JsonString="[If(Not String.IsNullOrWhiteSpace(ResponseContent) AndAlso (ResponseContent.TrimStart.StartsWith(&quot;{&quot;) OrElse ResponseContent.TrimStart.StartsWith(&quot;[&quot;)), ResponseContent, &quot;{}&quot;)]" />
+              <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_5">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[imageUrl]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[If(jsonResponse IsNot Nothing AndAlso jsonResponse.SelectToken("results[0].urls.regular") IsNot Nothing, jsonResponse.SelectToken("results[0].urls.regular").ToString, String.Empty)]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:LogMessage DisplayName="Log Image URL" sap:VirtualizedContainerService.HintSize="451.2,182.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Image URL found: &quot; + imageUrl]" />
+              <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_7">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[imageFileName]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[If(String.IsNullOrWhiteSpace(title), Guid.NewGuid().ToString() + ".jpg", String.Join("_", title.Split(Path.GetInvalidFileNameChars())).Trim() + ".jpg")]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_8">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[imagePath]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">["Images/" + imageFileName]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <If Condition="[Not String.IsNullOrWhiteSpace(imageUrl)]" sap:VirtualizedContainerService.HintSize="451.2,1184" sap2010:WorkflowViewState.IdRef="If_1">
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,903.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" Headers="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" TextPayload="{x:Null}" AuthenticationType="None" ContinueOnError="False" DisableSslVerification="False" DisplayName="HTTP Request - Download Image" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" sap:VirtualizedContainerService.HintSize="416,276.8" sap2010:WorkflowViewState.IdRef="NetHttpRequest_3" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="GET" Multiplier="2" OutputFileName="[imageFileName]" OutputFileTargetFolder="[imagesFolderPath]" PreferRetryAfterValue="True" RequestBodyType="None" RequestUrl="[imageUrl]" Result="[downloadResponse]" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="True" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+                      <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                        <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                          <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                        </InArgument>
+                      </uwah:NetHttpRequest.TimeoutInMiliseconds>
+                    </uwah:NetHttpRequest>
+                    <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_9">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Object">[imageBytes]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Object">[If(downloadResponse Is Nothing, CType(New Byte() {}, Object), If(TypeOf downloadResponse Is Byte(), CType(downloadResponse, Object), If(downloadResponse.GetType.GetProperty("BinaryContent") IsNot Nothing AndAlso downloadResponse.GetType.GetProperty("BinaryContent").GetValue(downloadResponse, Nothing) IsNot Nothing, CType(downloadResponse.GetType.GetProperty("BinaryContent").GetValue(downloadResponse, Nothing), Object), CType(New Byte() {}, Object))))]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Try&#xA;    Dim targetFolder As String = If(String.IsNullOrWhiteSpace(in_ImagesFolderPath), Environment.CurrentDirectory, in_ImagesFolderPath)&#xA;    If Not String.Equals(System.IO.Path.GetFileName(targetFolder.TrimEnd(System.IO.Path.DirectorySeparatorChar, System.IO.Path.AltDirectorySeparatorChar)), &quot;Images&quot;, StringComparison.OrdinalIgnoreCase) Then&#xA;        targetFolder = System.IO.Path.Combine(targetFolder, &quot;Images&quot;)&#xA;    End If&#xA;&#xA;    System.IO.Directory.CreateDirectory(targetFolder)&#xA;&#xA;    Dim safeFileName As String = If(String.IsNullOrWhiteSpace(in_ImageFileName), &quot;downloaded_file_&quot; &amp; Guid.NewGuid().ToString() &amp; &quot;.jpg&quot;, in_ImageFileName)&#xA;    Dim fullPath As String = System.IO.Path.Combine(targetFolder, safeFileName)&#xA;    Dim bytes = TryCast(in_imageBytes, Byte())&#xA;&#xA;    If bytes IsNot Nothing AndAlso bytes.Length &gt; 0 Then&#xA;        System.IO.File.WriteAllBytes(fullPath, bytes)&#xA;    End If&#xA;&#xA;    If System.IO.File.Exists(fullPath) Then&#xA;        out_ImagePath = System.IO.Path.Combine(&quot;Images&quot;, safeFileName)&#xA;        out_Status = &quot;Success&quot;&#xA;    Else&#xA;        out_ImagePath = String.Empty&#xA;        out_Status = &quot;No image file saved&quot;&#xA;    End If&#xA;Catch ex As Exception&#xA;    out_ImagePath = String.Empty&#xA;    out_Status = &quot;Failed: &quot; &amp; ex.Message&#xA;End Try" DisplayName="Write Binary File and Get Path" sap:VirtualizedContainerService.HintSize="416,392" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+                      <ui:InvokeCode.Arguments>
+                        <InArgument x:TypeArguments="x:Object" x:Key="in_imageBytes">[imageBytes]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_ImagesFolderPath">[imagesFolderPath]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_ImageFileName">[imageFileName]</InArgument>
+                        <OutArgument x:TypeArguments="x:String" x:Key="out_ImagePath">[imagePath]</OutArgument>
+                        <OutArgument x:TypeArguments="x:String" x:Key="out_Status">[imageStatus]</OutArgument>
+                      </ui:InvokeCode.Arguments>
+                    </ui:InvokeCode>
+                    <ui:LogMessage DisplayName="Log Save Status" sap:VirtualizedContainerService.HintSize="416,182.4" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Save status: &quot; + imageStatus + &quot; | Path: &quot; + imagePath]" />
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="304,174.4" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="271.2,112.8" sap2010:WorkflowViewState.IdRef="Assign_12">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[imagePath]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[String.Empty]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_10">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Object">[row("ImagePath")]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Object">[imagePath]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="Assign_11">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Object">[row("Status")]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Object">[imageStatus]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEachRow.Body>
+      </ui:ForEachRow>
+      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope (Write Image Paths)" sap:VirtualizedContainerService.HintSize="486.4,620.8" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
+        <ueab:ExcelProcessScopeX.Body>
+          <ActivityAction x:TypeArguments="ui:IExcelProcess">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag1" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484.8,551.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="451.2,491.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" WorkbookPath="Data\dtContent.xlsx">
+                <ueab:ExcelApplicationCard.Body>
+                  <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel1" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,272" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ueab:WriteRangeX Destination="[Excel1.Sheet(&quot;Sheet1&quot;).Range(&quot;A1&quot;)]" DisplayName="Write ImagePath updates" sap:VirtualizedContainerService.HintSize="416,212" sap2010:WorkflowViewState.IdRef="WriteRangeX_1" IgnoreEmptySource="False" Source="[dtContent]" />
+                    </Sequence>
+                  </ActivityAction>
+                </ueab:ExcelApplicationCard.Body>
+              </ueab:ExcelApplicationCard>
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelProcessScopeX.Body>
+      </ueab:ExcelProcessScopeX>
+    </Sequence>
+  </Sequence>
+</Activity>

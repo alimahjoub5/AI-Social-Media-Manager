@@ -1,0 +1,228 @@
+﻿<Activity mc:Ignorable="sap sap2010" x:Class="WF01_Get_Trends" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="WF01_Get_Trends_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uwah="clr-namespace:UiPath.Web.Activities.Http;assembly=UiPath.Web.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Web.Activities.Http.Models</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>UiPath.Web.Activities.Http</x:String>
+      <x:String>UiPath.Sdk.Activities</x:String>
+      <x:String>UiPath.Sdk.Activities.DependencyInjection.Contracts</x:String>
+      <x:String>UiPath.Sdk.Activities.DependencyInjection</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="WF01_Get_Trends" sap:VirtualizedContainerService.HintSize="802.8000000000001,2504" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dtConfig" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtTrends" />
+      <Variable x:TypeArguments="x:Object" Name="jsonResponse" />
+      <Variable x:TypeArguments="x:String" Name="apiKey" />
+      <Variable x:TypeArguments="x:Int32" Name="Limit" />
+      <Variable x:TypeArguments="x:String" Name="sortType" />
+      <Variable x:TypeArguments="x:String" Name="Subreddit" />
+      <Variable x:TypeArguments="x:String" Name="url" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap:VirtualizedContainerService.HintSize="484.8,1228.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="451.2,448" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="Config\Config.xlsx">
+        <ueab:ExcelApplicationCard.Body>
+          <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,220" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="416,160" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[Excel.Sheet(&quot;Sheet1&quot;)]" SaveTo="[dtConfig]" />
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelApplicationCard.Body>
+      </ueab:ExcelApplicationCard>
+      <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Int32">[Limit]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Int32">[If(dtConfig IsNot Nothing AndAlso dtConfig.Select("Key='Limit'").Length &gt; 0, CInt(dtConfig.Select("Key='Limit'")(0)("Value")), 10)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_3">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[sortType]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[If(dtConfig IsNot Nothing AndAlso dtConfig.Select("Key='Sort'").Length &gt; 0, dtConfig.Select("Key='Sort'")(0)("Value").ToString, "hot")]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_4">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[Subreddit]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[If(dtConfig IsNot Nothing AndAlso dtConfig.Select("Key='language'").Length &gt; 0, dtConfig.Select("Key='language'")(0)("Value").ToString, If(dtConfig IsNot Nothing AndAlso dtConfig.Select("Key='Subreddit'").Length &gt; 0, dtConfig.Select("Key='Subreddit'")(0)("Value").ToString, "technology"))]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="451.2,165.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[url]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["https://hn.algolia.com/api/v1/search?query=" + Uri.EscapeDataString(subreddit) + "&amp;tags=story&amp;hitsPerPage=" + limit.ToString]</InArgument>
+        </Assign.Value>
+      </Assign>
+    </Sequence>
+    <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" TextPayload="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.Dictionary(Of System.String, System.String) From { { &quot;User-Agent&quot;, &quot;UiPathBot/1.0&quot; } }]" sap:VirtualizedContainerService.HintSize="484.8,276.8" sap2010:WorkflowViewState.IdRef="NetHttpRequest_1" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="GET" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="None" RequestUrl="[url]" Result="[jsonResponse]" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+      <uwah:NetHttpRequest.TimeoutInMiliseconds>
+        <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+          <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+        </InArgument>
+      </uwah:NetHttpRequest.TimeoutInMiliseconds>
+    </uwah:NetHttpRequest>
+    <Sequence sap:VirtualizedContainerService.HintSize="484.8,975.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeCode ContinueOnError="{x:Null}" Code="io_dtTrends = New DataTable()&#xA;io_dtTrends.Columns.Add(&quot;Title&quot;)&#xA;io_dtTrends.Columns.Add(&quot;Description&quot;)&#xA;io_dtTrends.Columns.Add(&quot;Subreddit&quot;)&#xA;io_dtTrends.Columns.Add(&quot;Upvotes&quot;)&#xA;io_dtTrends.Columns.Add(&quot;Comments&quot;)&#xA;io_dtTrends.Columns.Add(&quot;Link&quot;)&#xA;&#xA;Dim responseText As String = String.Empty&#xA;If in_jsonResponse IsNot Nothing Then&#xA;    If TypeOf in_jsonResponse Is String Then&#xA;        responseText = in_jsonResponse.ToString()&#xA;    Else&#xA;        Dim responseType = in_jsonResponse.GetType()&#xA;        Dim bodyProp = responseType.GetProperty(&quot;Body&quot;)&#xA;        If bodyProp IsNot Nothing Then&#xA;            Dim bodyValue = bodyProp.GetValue(in_jsonResponse, Nothing)&#xA;            If bodyValue IsNot Nothing Then responseText = bodyValue.ToString()&#xA;        End If&#xA;        If String.IsNullOrWhiteSpace(responseText) Then&#xA;            Dim contentProp = responseType.GetProperty(&quot;Content&quot;)&#xA;            If contentProp IsNot Nothing Then&#xA;                Dim contentValue = contentProp.GetValue(in_jsonResponse, Nothing)&#xA;                If contentValue IsNot Nothing Then responseText = contentValue.ToString()&#xA;            End If&#xA;        End If&#xA;        If String.IsNullOrWhiteSpace(responseText) Then&#xA;            Dim textContentProp = responseType.GetProperty(&quot;TextContent&quot;)&#xA;            If textContentProp IsNot Nothing Then&#xA;                Dim textContentValue = textContentProp.GetValue(in_jsonResponse, Nothing)&#xA;                If textContentValue IsNot Nothing Then responseText = textContentValue.ToString()&#xA;            End If&#xA;        End If&#xA;        If String.IsNullOrWhiteSpace(responseText) Then&#xA;            Dim binaryContentProp = responseType.GetProperty(&quot;BinaryContent&quot;)&#xA;            If binaryContentProp IsNot Nothing Then&#xA;                Dim binaryContentValue = TryCast(binaryContentProp.GetValue(in_jsonResponse, Nothing), Byte())&#xA;                If binaryContentValue IsNot Nothing AndAlso binaryContentValue.Length &gt; 0 Then&#xA;                    responseText = System.Text.Encoding.UTF8.GetString(binaryContentValue)&#xA;                End If&#xA;            End If&#xA;        End If&#xA;    End If&#xA;End If&#xA;&#xA;If String.IsNullOrWhiteSpace(responseText) Then Exit Sub&#xA;&#xA;Dim root As Newtonsoft.Json.Linq.JToken = Nothing&#xA;Try&#xA;    root = Newtonsoft.Json.Linq.JToken.Parse(responseText)&#xA;Catch&#xA;    Exit Sub&#xA;End Try&#xA;&#xA;If root(&quot;hits&quot;) Is Nothing Then Exit Sub&#xA;&#xA;For Each post In root(&quot;hits&quot;)&#xA;    Dim title As String = If(post(&quot;title&quot;), If(post(&quot;story_title&quot;), &quot;&quot;)).ToString()&#xA;    If String.IsNullOrWhiteSpace(title) Then Continue For&#xA;    Dim description As String = If(post(&quot;story_text&quot;), If(post(&quot;comment_text&quot;), &quot;&quot;)).ToString()&#xA;    Dim source As String = If(post(&quot;author&quot;), in_subreddit).ToString()&#xA;    Dim upvotes As String = If(post(&quot;points&quot;), &quot;0&quot;).ToString()&#xA;    Dim comments As String = If(post(&quot;num_comments&quot;), &quot;0&quot;).ToString()&#xA;    Dim link As String = If(post(&quot;url&quot;), &quot;&quot;).ToString()&#xA;    If String.IsNullOrWhiteSpace(link) Then link = &quot;https://news.ycombinator.com/item?id=&quot; + If(post(&quot;objectID&quot;), &quot;&quot;).ToString()&#xA;    io_dtTrends.Rows.Add(title, description, source, upvotes, comments, link)&#xA;Next" sap:VirtualizedContainerService.HintSize="484.8,648" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+        <ui:InvokeCode.Arguments>
+          <InArgument x:TypeArguments="x:Object" x:Key="in_jsonResponse">[jsonResponse]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_subreddit">[subreddit]</InArgument>
+          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtTrends">[dtTrends]</InOutArgument>
+        </ui:InvokeCode.Arguments>
+      </ui:InvokeCode>
+      <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="451.2,491.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" WorkbookPath="Data\Trends.xlsx">
+        <ueab:ExcelApplicationCard.Body>
+          <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,272" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Sheet1&quot;).Range(&quot;A1&quot;)]" DisplayName="Write Trends (WriteRangeX)" sap:VirtualizedContainerService.HintSize="416,212" sap2010:WorkflowViewState.IdRef="WriteRangeX_3" IgnoreEmptySource="False" Source="[dtTrends]" />
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelApplicationCard.Body>
+      </ueab:ExcelApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>
+
+

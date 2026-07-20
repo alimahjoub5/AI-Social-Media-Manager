@@ -1,0 +1,38 @@
+﻿{
+  "Version": "1.0",
+  "Metadata": [
+    {
+      "ApplicationType": "WindowsApplication",
+      "ExecutablePath": {
+        "Value": "excel.exe",
+        "IsExpression": false
+      },
+      "Url": null,
+      "Arguments": {
+        "Value": "Data\\dtContent.xlsx",
+        "IsExpression": false
+      },
+      "Version": null
+    },
+    {
+      "ApplicationType": "API",
+      "ExecutablePath": null,
+      "Url": {
+        "Value": "imageUrl",
+        "IsExpression": true
+      },
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "API",
+      "ExecutablePath": null,
+      "Url": {
+        "Value": "\"https://api.unsplash.com/search/photos?query=\" + Uri.EscapeDataString(If(Prompt, String.Empty)) + \"&per_page=1&orientation=squarish&content_filter=high\"",
+        "IsExpression": true
+      },
+      "Arguments": null,
+      "Version": null
+    }
+  ]
+}
