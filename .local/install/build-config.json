@@ -1,6 +1,6 @@
 {
   "Version": "1.0",
   "IncludeWorkflows": [
-    "Workflows/WF03_GenerateImages.xaml"
+    "Workflows/WF04_Human_Approval.xaml"
   ]
 }

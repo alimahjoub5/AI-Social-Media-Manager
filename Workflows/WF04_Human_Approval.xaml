@@ -1,0 +1,450 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="WF04_Human_Approval" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="WF04_Human_Approval_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umam="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umame="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umamm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umm="clr-namespace:UiPath.MicrosoftOffice365.Models;assembly=UiPath.MicrosoftOffice365" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Models</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Models</x:String>
+      <x:String>UiPath.Shared.Services.Graph.Mail.Models</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Filters</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Mail.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Filters</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.MicrosoftOffice365</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="WF04_Human_Approval" sap:VirtualizedContainerService.HintSize="946,7390.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap:VirtualizedContainerService.HintSize="633.6,7367.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataRow[]" Name="pendingRows" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtContent" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="600,577.6" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+        <ueab:ExcelProcessScopeX.Body>
+          <ActivityAction x:TypeArguments="ui:IExcelProcess">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484.8,499.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="451.2,439.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="Data\dtContent.xlsx">
+                <ueab:ExcelApplicationCard.Body>
+                  <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,220" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="416,160" sap2010:WorkflowViewState.IdRef="ReadRangeX_2" Range="[Excel.Sheet(&quot;Sheet1&quot;)]" SaveTo="[dtContent]" />
+                    </Sequence>
+                  </ActivityAction>
+                </ueab:ExcelApplicationCard.Body>
+              </ueab:ExcelApplicationCard>
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelProcessScopeX.Body>
+      </ueab:ExcelProcessScopeX>
+      <Assign sap:VirtualizedContainerService.HintSize="600,174.4" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="sd:DataRow[]">[pendingRows]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="sd:DataRow[]">[If(dtContent IsNot Nothing AndAlso dtContent.Columns.Contains("Status"), dtContent.Select("Status IS NULL OR Status = '' OR Status = 'Pending'"), New DataRow() {})]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[If(pendingRows IsNot Nothing AndAlso pendingRows.Length &gt; 0, pendingRows.CopyToDataTable(), If(dtContent IsNot Nothing, dtContent.Clone(), New DataTable()))]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="600,5911.2" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+        <ui:ForEachRow.Body>
+          <ActivityAction x:TypeArguments="sd:DataRow">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="598.4,5729.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="approvalId" />
+                <Variable x:TypeArguments="x:String" Name="mailSubject" />
+                <Variable x:TypeArguments="x:String" Name="mailBody" />
+                <Variable x:TypeArguments="x:String" Name="responseText" />
+                <Variable x:TypeArguments="x:Boolean" Name="isApproved" />
+                <Variable x:TypeArguments="x:Int32" Name="retryCount" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="564.8,174.4" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[approvalId]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[Guid.NewGuid().ToString.Substring(0,8).ToUpper]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="564.8,174.4" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[mailSubject]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">["[APPROVAL- " &amp; approvalId &amp; " ] " &amp; CurrentRow("Title").ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:LogMessage DisplayName="Log Approval Start" sap:VirtualizedContainerService.HintSize="564.8,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Approval flow started | ID: &quot; &amp; approvalId &amp; &quot; | Title: &quot; &amp; CurrentRow(&quot;Title&quot;).ToString]" />
+              <Assign sap:VirtualizedContainerService.HintSize="564.8,174.4" sap2010:WorkflowViewState.IdRef="Assign_4">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[mailBody]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">["&lt;html&gt;&lt;body style='font-family:Segoe UI'&gt;" &amp; "&lt;h2&gt;Social Media Approval Request&lt;/h2&gt;" &amp; "&lt;p&gt;&lt;b&gt;Approval ID:&lt;/b&gt; " &amp; approvalId &amp; "&lt;/p&gt;" &amp; "&lt;p&gt;&lt;b&gt;Title:&lt;/b&gt; " &amp; CurrentRow("Title").ToString &amp; "&lt;/p&gt;" &amp; "&lt;p&gt;&lt;b&gt;Hook:&lt;/b&gt; " &amp; CurrentRow("Hook").ToString &amp; "&lt;/p&gt;" &amp; "&lt;hr/&gt;" &amp; "&lt;h3&gt;Instagram&lt;/h3&gt;&lt;p&gt;" &amp; CurrentRow("Instagram").ToString &amp; "&lt;/p&gt;" &amp; "&lt;h3&gt;Facebook&lt;/h3&gt;&lt;p&gt;" &amp; CurrentRow("Facebook").ToString &amp; "&lt;/p&gt;" &amp; "&lt;h3&gt;LinkedIn&lt;/h3&gt;&lt;p&gt;" &amp; CurrentRow("LinkedIn").ToString &amp; "&lt;/p&gt;" &amp; "&lt;h3&gt;X / Twitter&lt;/h3&gt;&lt;p&gt;" &amp; CurrentRow("Twitter").ToString &amp; "&lt;/p&gt;" &amp; "&lt;h3&gt;TikTok&lt;/h3&gt;&lt;p&gt;" &amp; CurrentRow("TikTok").ToString &amp; "&lt;/p&gt;" &amp; "&lt;hr/&gt;" &amp; "&lt;p&gt;&lt;b&gt;CTA:&lt;/b&gt; " &amp; CurrentRow("CTA").ToString &amp; "&lt;/p&gt;" &amp; "&lt;p&gt;&lt;b&gt;Hashtags:&lt;/b&gt; " &amp; CurrentRow("Hashtags").ToString &amp; "&lt;/p&gt;" &amp; "&lt;hr/&gt;" &amp; "&lt;p&gt;Reply with one of the following:&lt;/p&gt;" &amp; "&lt;ul&gt;" &amp; "&lt;li&gt;&lt;b&gt;APPROVE " &amp; approvalId &amp; "&lt;/b&gt;&lt;/li&gt;" &amp; "&lt;li&gt;&lt;b&gt;REJECT " &amp; approvalId &amp; "&lt;/b&gt;&lt;/li&gt;" &amp; "&lt;/ul&gt;" &amp; "&lt;/body&gt;&lt;/html&gt;"]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:LogMessage DisplayName="Log Attachment Path" sap:VirtualizedContainerService.HintSize="564.8,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Attachment candidate for ID &quot; &amp; approvalId &amp; &quot;: &quot; &amp; If(String.IsNullOrWhiteSpace(CurrentRow(&quot;ImagePath&quot;).ToString), &quot;&lt;empty&gt;&quot;, CurrentRow(&quot;ImagePath&quot;).ToString)]" />
+              <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" MailboxBackup="{x:Reference __ReferenceID1}" ReplyTo="{x:Null}" SensitivityLabelId="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="FilePaths" AttachmentPaths="[If(String.IsNullOrWhiteSpace(CurrentRow(&quot;ImagePath&quot;).ToString), New String() {}, New String() {CurrentRow(&quot;ImagePath&quot;).ToString})]" AuthScopesInvalid="False" Body="[mailBody]" ConnectionId="d7bd22da-5d9f-44af-96a9-706170619e03" DisplayName="Send Outlook Mail Message (SendOutlookMail)" sap:VirtualizedContainerService.HintSize="564.8,459.2" sap2010:WorkflowViewState.IdRef="SendMailConnections_1" Importance="Normal" InputType="HTML" IsDeliveryReceiptRequested="False" IsReadReceiptRequested="False" SaveAsDraft="False" Subject="[mailSubject]" To="[New String(){&quot;alimahjoub047@gmail.com&quot;}]" UseConnectionService="True" UseSharedMailbox="False">
+                <umam:SendMailConnections.AttachmentsBackup>
+                  <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="FilePaths">
+                    <usau:BackupSlot.BackupValues>
+                      <scg:Dictionary x:TypeArguments="umame:AttachmentInputMode, scg:List(x:Object)" />
+                    </usau:BackupSlot.BackupValues>
+                  </usau:BackupSlot>
+                </umam:SendMailConnections.AttachmentsBackup>
+                <umam:SendMailConnections.InputTypeBackup>
+                  <usau:BackupSlot x:TypeArguments="umame:BodyInputType" StoredValue="HTML">
+                    <usau:BackupSlot.BackupValues>
+                      <scg:Dictionary x:TypeArguments="umame:BodyInputType, scg:List(x:Object)" />
+                    </usau:BackupSlot.BackupValues>
+                  </usau:BackupSlot>
+                </umam:SendMailConnections.InputTypeBackup>
+                <umam:SendMailConnections.Mailbox>
+                  <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID0" />
+                </umam:SendMailConnections.Mailbox>
+                <umam:SendMailConnections.MailboxArg>
+                  <umamm:MailboxArgument SharedMailbox="{x:Reference __ReferenceID0}" UseSharedMailbox="False">
+                    <umamm:MailboxArgument.Backup>
+                      <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" x:Name="__ReferenceID1" StoredValue="NoMailbox">
+                        <usau:BackupSlot.BackupValues>
+                          <scg:Dictionary x:TypeArguments="umame:MailboxSelectionMode, scg:List(x:Object)" />
+                        </usau:BackupSlot.BackupValues>
+                      </usau:BackupSlot>
+                    </umamm:MailboxArgument.Backup>
+                  </umamm:MailboxArgument>
+                </umam:SendMailConnections.MailboxArg>
+              </umam:SendMailConnections>
+              <ui:LogMessage DisplayName="Log Mail Sent" sap:VirtualizedContainerService.HintSize="564.8,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Approval email sent | ID: &quot; &amp; approvalId &amp; &quot; | Subject: &quot; &amp; mailSubject]" />
+              <Assign sap:VirtualizedContainerService.HintSize="564.8,174.4" sap2010:WorkflowViewState.IdRef="Assign_5">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[responseText]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[String.Empty]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="564.8,174.4" sap2010:WorkflowViewState.IdRef="Assign_6">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[isApproved]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="564.8,174.4" sap2010:WorkflowViewState.IdRef="Assign_7">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Int32">[retryCount]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <DoWhile sap:VirtualizedContainerService.HintSize="564.8,2428.8" sap2010:WorkflowViewState.IdRef="DoWhile_1" Condition="[Not(isApproved Or responseText.Contains(&quot;REJECT&quot;)) AndAlso retryCount &lt; 30]">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="520,2234.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Poll Attempt" sap:VirtualizedContainerService.HintSize="486.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Polling approval response | ID: &quot; &amp; approvalId &amp; &quot; | Attempt: &quot; &amp; (retryCount + 1).ToString &amp; &quot;/30&quot;]" />
+                  <Assign sap:VirtualizedContainerService.HintSize="486.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_8">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[responseText]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[String.Empty]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <umam:ForEachEmailConnections ConnectionAccountName="{x:Null}" Filter="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID4}" FreeTextFilter="{x:Null}" Length="{x:Null}" ManualEntryFolder="{x:Null}" QueryFilter="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" BrowserFolder="Inbox" BrowserFolderId="Inbox" ConnectionId="d7bd22da-5d9f-44af-96a9-706170619e03" CurrentItemVariableName="CurrentEmail" DisplayName="For Each Email (Inbox Top 20) (ForEachEmailConnections)" FilterSelectionMode="ConditionBuilder" sap:VirtualizedContainerService.HintSize="486.4,735.2" sap2010:WorkflowViewState.IdRef="ForEachEmailConnections_2" Importance="Any" IncludeSubfolders="False" MarkAsRead="False" MaxResults="100" OrderByDate="NewestFirst" SelectionMode="Browse" UnreadOnly="False" UseConnectionService="True" UseSharedMailbox="False" WithAttachmentsOnly="False">
+                    <umam:ForEachEmailConnections.Body>
+                      <ActivityAction x:TypeArguments="umm:Office365Message, x:Int32">
+                        <ActivityAction.Argument1>
+                          <DelegateInArgument x:TypeArguments="umm:Office365Message" Name="CurrentEmail" />
+                        </ActivityAction.Argument1>
+                        <ActivityAction.Argument2>
+                          <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentEmailIndex" />
+                        </ActivityAction.Argument2>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="484.8,444" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If Condition="[CurrentEmail IsNot Nothing AndAlso CurrentEmail.Subject.Contains(approvalId)]" sap:VirtualizedContainerService.HintSize="451.2,384" sap2010:WorkflowViewState.IdRef="If_2">
+                            <If.Then>
+                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,244.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                <Assign sap:VirtualizedContainerService.HintSize="416,142.4" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[responseText]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[CurrentEmail.BodyPreview.ToUpper.Trim]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <ui:LogMessage DisplayName="Log Matching Response" sap:VirtualizedContainerService.HintSize="416,182.4" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Matched response email for ID: &quot; &amp; approvalId &amp; &quot; | Subject: &quot; &amp; CurrentEmail.Subject]" />
+                              </Sequence>
+                            </If.Then>
+                          </If>
+                        </Sequence>
+                      </ActivityAction>
+                    </umam:ForEachEmailConnections.Body>
+                    <umam:ForEachEmailConnections.FilterSelectionBackup>
+                      <usau:BackupSlot x:TypeArguments="umame:FilterMode" StoredValue="ConditionBuilder">
+                        <usau:BackupSlot.BackupValues>
+                          <scg:Dictionary x:TypeArguments="umame:FilterMode, scg:List(x:Object)" />
+                        </usau:BackupSlot.BackupValues>
+                      </usau:BackupSlot>
+                    </umam:ForEachEmailConnections.FilterSelectionBackup>
+                    <umam:ForEachEmailConnections.MailFolderArgument>
+                      <umamm:MailFolderArgument ConnectionDescriptor="{x:Null}" ManualEntryFolder="{x:Null}" BrowserFolder="Inbox" BrowserFolderId="Inbox" ConnectionKey="d7bd22da-5d9f-44af-96a9-706170619e03" SelectionMode="Browse">
+                        <umamm:MailFolderArgument.Backup>
+                          <usau:BackupSlot x:TypeArguments="umame:ItemSelectionMode" x:Name="__ReferenceID4" StoredValue="Browse">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:Dictionary x:TypeArguments="umame:ItemSelectionMode, scg:List(x:Object)" />
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </umamm:MailFolderArgument.Backup>
+                      </umamm:MailFolderArgument>
+                    </umam:ForEachEmailConnections.MailFolderArgument>
+                    <umam:ForEachEmailConnections.Mailbox>
+                      <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID2" />
+                    </umam:ForEachEmailConnections.Mailbox>
+                    <umam:ForEachEmailConnections.MailboxArg>
+                      <umamm:MailboxArgument Backup="{x:Reference __ReferenceID3}" SharedMailbox="{x:Reference __ReferenceID2}" UseSharedMailbox="False" />
+                    </umam:ForEachEmailConnections.MailboxArg>
+                    <umam:ForEachEmailConnections.MailboxBackup>
+                      <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" x:Name="__ReferenceID3" StoredValue="NoMailbox">
+                        <usau:BackupSlot.BackupValues>
+                          <scg:Dictionary x:TypeArguments="umame:MailboxSelectionMode, scg:List(x:Object)" />
+                        </usau:BackupSlot.BackupValues>
+                      </usau:BackupSlot>
+                    </umam:ForEachEmailConnections.MailboxBackup>
+                  </umam:ForEachEmailConnections>
+                  <Assign sap:VirtualizedContainerService.HintSize="486.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_10">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[isApproved]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">[responseText.Contains("APPROVE " &amp; approvalId)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:LogMessage DisplayName="Log Poll Status" sap:VirtualizedContainerService.HintSize="486.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Poll status | ID: &quot; &amp; approvalId &amp; &quot; | Approved: &quot; &amp; isApproved.ToString &amp; &quot; | ContainsReject: &quot; &amp; responseText.Contains(&quot;REJECT&quot;).ToString]" />
+                  <If Condition="[Not(isApproved Or responseText.Contains(&quot;REJECT&quot;))]" sap:VirtualizedContainerService.HintSize="486.4,576" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,348" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Waiting Next Poll" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;No decision yet for ID: &quot; &amp; approvalId &amp; &quot;. Waiting 2 minutes before next poll.&quot;]" />
+                        <Delay Duration="00:02:00" sap:VirtualizedContainerService.HintSize="416,113.6" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <Assign sap:VirtualizedContainerService.HintSize="486.4,165.6" sap2010:WorkflowViewState.IdRef="Assign_11">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[retryCount]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[retryCount + 1]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </DoWhile>
+              <Assign sap:VirtualizedContainerService.HintSize="564.8,174.4" sap2010:WorkflowViewState.IdRef="Assign_12">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Object">[CurrentRow("Status")]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Object">[If(isApproved, "Approved", "Rejected")]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <If Condition="[Not isApproved AndAlso Not String.IsNullOrWhiteSpace(CurrentRow(&quot;ImagePath&quot;).ToString) AndAlso System.IO.File.Exists(CurrentRow(&quot;ImagePath&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="564.8,872" sap2010:WorkflowViewState.IdRef="If_4">
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,644" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:InvokeCode ContinueOnError="{x:Null}" Code="System.IO.Directory.CreateDirectory(&quot;Rejected&quot;)" DisplayName="Ensure Rejected Folder" sap:VirtualizedContainerService.HintSize="416,400.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+                      <ui:InvokeCode.Arguments>
+                        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                      </ui:InvokeCode.Arguments>
+                    </ui:InvokeCode>
+                    <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[&quot;Rejected\&quot; + System.IO.Path.GetFileName(CurrentRow(&quot;ImagePath&quot;).ToString)]" DisplayName="Move File to Rejected" sap:VirtualizedContainerService.HintSize="416,183.2" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[CurrentRow(&quot;ImagePath&quot;).ToString]" />
+                  </Sequence>
+                </If.Then>
+              </If>
+              <ui:LogMessage DisplayName="Log Final Approval Outcome" sap:VirtualizedContainerService.HintSize="564.8,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Final decision | ID: &quot; &amp; approvalId &amp; &quot; | Outcome: &quot; &amp; If(isApproved, &quot;APPROVED&quot;, If(responseText.Contains(&quot;REJECT&quot;), &quot;REJECTED&quot;, &quot;TIMEOUT&quot;)) &amp; &quot; | Attempts: &quot; &amp; retryCount.ToString]" />
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEachRow.Body>
+      </ui:ForEachRow>
+      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope - Write Back" sap:VirtualizedContainerService.HintSize="600,620.8" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
+        <ueab:ExcelProcessScopeX.Body>
+          <ActivityAction x:TypeArguments="ui:IExcelProcess">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag2" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484.8,551.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="451.2,491.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" WorkbookPath="Data\dtContent.xlsx">
+                <ueab:ExcelApplicationCard.Body>
+                  <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel2" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,272" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ueab:WriteRangeX Destination="[Excel2.Sheet(&quot;Sheet1&quot;)]" DisplayName="Write Status Updates" sap:VirtualizedContainerService.HintSize="416,212" sap2010:WorkflowViewState.IdRef="WriteRangeX_1" IgnoreEmptySource="False" Source="[dtContent]" />
+                    </Sequence>
+                  </ActivityAction>
+                </ueab:ExcelApplicationCard.Body>
+              </ueab:ExcelApplicationCard>
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelProcessScopeX.Body>
+      </ueab:ExcelProcessScopeX>
+    </Sequence>
+  </Sequence>
+</Activity>
