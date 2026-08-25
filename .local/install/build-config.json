@@ -1,6 +1,6 @@
 {
   "Version": "1.0",
   "IncludeWorkflows": [
-    "Workflows/WF04_Human_Approval.xaml"
+    "Workflows/WF05_Schedule_Posts.xaml"
   ]
 }

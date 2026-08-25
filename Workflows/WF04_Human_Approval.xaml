@@ -111,13 +111,13 @@
       <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="WF04_Human_Approval" sap:VirtualizedContainerService.HintSize="946,7390.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="WF04_Human_Approval" sap:VirtualizedContainerService.HintSize="1003.6,7725.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="633.6,7367.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap:VirtualizedContainerService.HintSize="633.6,7702.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataRow[]" Name="pendingRows" />
         <Variable x:TypeArguments="sd:DataTable" Name="dtContent" />
@@ -168,13 +168,13 @@
           <InArgument x:TypeArguments="sd:DataRow[]">[If(dtContent IsNot Nothing AndAlso dtContent.Columns.Contains("Status"), dtContent.Select("Status IS NULL OR Status = '' OR Status = 'Pending'"), New DataRow() {})]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[If(pendingRows IsNot Nothing AndAlso pendingRows.Length &gt; 0, pendingRows.CopyToDataTable(), If(dtContent IsNot Nothing, dtContent.Clone(), New DataTable()))]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="600,5911.2" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[If(pendingRows IsNot Nothing AndAlso pendingRows.Length &gt; 0, pendingRows.CopyToDataTable(), If(dtContent IsNot Nothing, dtContent.Clone(), New DataTable()))]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="600,6246.4" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="598.4,5729.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="598.4,6064.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="approvalId" />
                 <Variable x:TypeArguments="x:String" Name="mailSubject" />
@@ -214,7 +214,7 @@
                 </Assign.Value>
               </Assign>
               <ui:LogMessage DisplayName="Log Attachment Path" sap:VirtualizedContainerService.HintSize="564.8,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Attachment candidate for ID &quot; &amp; approvalId &amp; &quot;: &quot; &amp; If(String.IsNullOrWhiteSpace(CurrentRow(&quot;ImagePath&quot;).ToString), &quot;&lt;empty&gt;&quot;, CurrentRow(&quot;ImagePath&quot;).ToString)]" />
-              <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" MailboxBackup="{x:Reference __ReferenceID1}" ReplyTo="{x:Null}" SensitivityLabelId="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="FilePaths" AttachmentPaths="[If(String.IsNullOrWhiteSpace(CurrentRow(&quot;ImagePath&quot;).ToString), New String() {}, New String() {CurrentRow(&quot;ImagePath&quot;).ToString})]" AuthScopesInvalid="False" Body="[mailBody]" ConnectionId="d7bd22da-5d9f-44af-96a9-706170619e03" DisplayName="Send Outlook Mail Message (SendOutlookMail)" sap:VirtualizedContainerService.HintSize="564.8,459.2" sap2010:WorkflowViewState.IdRef="SendMailConnections_1" Importance="Normal" InputType="HTML" IsDeliveryReceiptRequested="False" IsReadReceiptRequested="False" SaveAsDraft="False" Subject="[mailSubject]" To="[New String(){&quot;alimahjoub047@gmail.com&quot;}]" UseConnectionService="True" UseSharedMailbox="False">
+              <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" MailboxBackup="{x:Reference __ReferenceID1}" ReplyTo="{x:Null}" SensitivityLabelId="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="FilePaths" AttachmentPaths="[If(String.IsNullOrWhiteSpace(CurrentRow(&quot;ImagePath&quot;).ToString), New String() {}, New String() {CurrentRow(&quot;ImagePath&quot;).ToString})]" AuthScopesInvalid="False" Body="[mailBody]" ConnectionId="f6d05a91-412e-486c-9f36-d10c6cc3cec1" DisplayName="Send Outlook Mail Message (SendOutlookMail)" sap:VirtualizedContainerService.HintSize="564.8,559.2" sap2010:WorkflowViewState.IdRef="SendMailConnections_1" Importance="Normal" InputType="HTML" IsDeliveryReceiptRequested="False" IsReadReceiptRequested="False" SaveAsDraft="False" Subject="[mailSubject]" To="[New String(){&quot;alimahjoub047@gmail.com&quot;}]" UseConnectionService="True" UseSharedMailbox="False">
                 <umam:SendMailConnections.AttachmentsBackup>
                   <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="FilePaths">
                     <usau:BackupSlot.BackupValues>
@@ -269,8 +269,8 @@
                   <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
                 </Assign.Value>
               </Assign>
-              <DoWhile sap:VirtualizedContainerService.HintSize="564.8,2428.8" sap2010:WorkflowViewState.IdRef="DoWhile_1" Condition="[Not(isApproved Or responseText.Contains(&quot;REJECT&quot;)) AndAlso retryCount &lt; 30]">
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="520,2234.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <DoWhile sap:VirtualizedContainerService.HintSize="564.8,2664" sap2010:WorkflowViewState.IdRef="DoWhile_1" Condition="[Not(isApproved Or responseText.Contains(&quot;REJECT&quot;)) AndAlso retryCount &lt; 30]">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="520,2469.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -285,7 +285,7 @@
                       <InArgument x:TypeArguments="x:String">[String.Empty]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <umam:ForEachEmailConnections ConnectionAccountName="{x:Null}" Filter="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID4}" FreeTextFilter="{x:Null}" Length="{x:Null}" ManualEntryFolder="{x:Null}" QueryFilter="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" BrowserFolder="Inbox" BrowserFolderId="Inbox" ConnectionId="d7bd22da-5d9f-44af-96a9-706170619e03" CurrentItemVariableName="CurrentEmail" DisplayName="For Each Email (Inbox Top 20) (ForEachEmailConnections)" FilterSelectionMode="ConditionBuilder" sap:VirtualizedContainerService.HintSize="486.4,735.2" sap2010:WorkflowViewState.IdRef="ForEachEmailConnections_2" Importance="Any" IncludeSubfolders="False" MarkAsRead="False" MaxResults="100" OrderByDate="NewestFirst" SelectionMode="Browse" UnreadOnly="False" UseConnectionService="True" UseSharedMailbox="False" WithAttachmentsOnly="False">
+                  <umam:ForEachEmailConnections ConnectionAccountName="{x:Null}" Filter="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID4}" FreeTextFilter="{x:Null}" Length="{x:Null}" ManualEntryFolder="{x:Null}" QueryFilter="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" BrowserFolder="Inbox" BrowserFolderId="Inbox" ConnectionId="d7bd22da-5d9f-44af-96a9-706170619e03" CurrentItemVariableName="CurrentEmail" DisplayName="For Each Email (Inbox Top 20) (ForEachEmailConnections)" FilterSelectionMode="ConditionBuilder" sap:VirtualizedContainerService.HintSize="486.4,970.4" sap2010:WorkflowViewState.IdRef="ForEachEmailConnections_2" Importance="Any" IncludeSubfolders="False" MarkAsRead="False" MaxResults="100" OrderByDate="NewestFirst" SelectionMode="Browse" UnreadOnly="False" UseConnectionService="True" UseSharedMailbox="False" WithAttachmentsOnly="False">
                     <umam:ForEachEmailConnections.Body>
                       <ActivityAction x:TypeArguments="umm:Office365Message, x:Int32">
                         <ActivityAction.Argument1>
@@ -294,16 +294,21 @@
                         <ActivityAction.Argument2>
                           <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentEmailIndex" />
                         </ActivityAction.Argument2>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="484.8,444" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="484.8,679.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <If Condition="[CurrentEmail IsNot Nothing AndAlso CurrentEmail.Subject.Contains(approvalId)]" sap:VirtualizedContainerService.HintSize="451.2,384" sap2010:WorkflowViewState.IdRef="If_2">
+                          <If Condition="[CurrentEmail IsNot Nothing AndAlso CurrentEmail.Subject.Contains(approvalId)]" sap:VirtualizedContainerService.HintSize="451.2,619.2" sap2010:WorkflowViewState.IdRef="If_2">
                             <If.Then>
-                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,244.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                                <Assign sap:VirtualizedContainerService.HintSize="416,142.4" sap2010:WorkflowViewState.IdRef="Assign_9">
+                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,400" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_9">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[responseText]</OutArgument>
                                   </Assign.To>
@@ -311,9 +316,18 @@
                                     <InArgument x:TypeArguments="x:String">[CurrentEmail.BodyPreview.ToUpper.Trim]</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <ui:LogMessage DisplayName="Log Matching Response" sap:VirtualizedContainerService.HintSize="416,182.4" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Matched response email for ID: &quot; &amp; approvalId &amp; &quot; | Subject: &quot; &amp; CurrentEmail.Subject]" />
+                                <ui:LogMessage DisplayName="Log Matching Response" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Matched response email for ID: &quot; &amp; approvalId &amp; &quot; | Subject: &quot; &amp; CurrentEmail.Subject]" />
                               </Sequence>
                             </If.Then>
+                            <If.Else>
+                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </If.Else>
                           </If>
                         </Sequence>
                       </ActivityAction>
@@ -371,6 +385,15 @@
                         <Delay Duration="00:02:00" sap:VirtualizedContainerService.HintSize="416,113.6" sap2010:WorkflowViewState.IdRef="Delay_1" />
                       </Sequence>
                     </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
                   </If>
                   <Assign sap:VirtualizedContainerService.HintSize="486.4,165.6" sap2010:WorkflowViewState.IdRef="Assign_11">
                     <Assign.To>
@@ -406,6 +429,15 @@
                     <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[&quot;Rejected\&quot; + System.IO.Path.GetFileName(CurrentRow(&quot;ImagePath&quot;).ToString)]" DisplayName="Move File to Rejected" sap:VirtualizedContainerService.HintSize="416,183.2" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[CurrentRow(&quot;ImagePath&quot;).ToString]" />
                   </Sequence>
                 </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
               </If>
               <ui:LogMessage DisplayName="Log Final Approval Outcome" sap:VirtualizedContainerService.HintSize="564.8,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Final decision | ID: &quot; &amp; approvalId &amp; &quot; | Outcome: &quot; &amp; If(isApproved, &quot;APPROVED&quot;, If(responseText.Contains(&quot;REJECT&quot;), &quot;REJECTED&quot;, &quot;TIMEOUT&quot;)) &amp; &quot; | Attempts: &quot; &amp; retryCount.ToString]" />
             </Sequence>
